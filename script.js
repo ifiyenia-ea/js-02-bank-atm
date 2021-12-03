@@ -30,3 +30,21 @@ function atm() {
   // you can use the variable choice for your switch or if/else statement
   // so choice will hold the value of the user input.
 }
+
+// ----------------------------
+
+// Assignment 2, Bank account / ATM
+
+// 1: Create the object - account - and its properties. Functions can be empty for now.
+// 2:
+
+const account = {
+  accountName: "Ifiyenia Hyde",
+  balance: 100,
+  getBalance: function () {},
+  deposit: function () {},
+  withdrawal: function () {},
+  getAccountName: function () {},
+  accountError: function () {},
+  exitAccount: function () {},
+};
