@@ -22,28 +22,6 @@
 //                                                          alert("your code here and maybe properties");
 // of course you need to put a proper message and you might need to display some of the properties.
 
-// parseFloat =
-
-// STARTER FUNCTION
-//function atm() {
-/*let choice = parseInt(prompt(hej));
-if (choice === 1) {
-  alert(`Your current balance is ${account.balance} SEK.`);
-} else if (2) {
-  prompt("How much would you like to deposit?");
-} else if (3) {
-  prompt("How mmuch would you want to withdraw?");
-} else if (4) {
-  alert(`Name of account: ${account.accountName}`);
-} else if (5) {
-  alert("Thanks for today, bye!");
-} else {
-  alert("Not a valid answer, please choose by writing number 1-5.");
-  hello();
-} 
-
-*/
-
 //prompt user for choice.
 
 // you can use the variable choice for your switch or if/else statement
@@ -61,6 +39,8 @@ if (choice === 1) {
 // Why parseInt / parseFloat: Otherwise, what is entered in a prompt is automatically a string. The
 // parseInt / parseFloat instead converts it to numbers (when needed?)
 
+// Have chosen the if / else statement since I feel more comfortable with it
+
 const account = {
   accountName: "Ifiyenia Hyde",
   balance: 100,
@@ -72,21 +52,13 @@ const account = {
     let moneyIn = parseFloat(
       prompt("How much (SEK) would you like to deposit?")
     );
-    if (isNaN(moneyIn)) {
-      this.accountError();
-      this.deposit();
-    } else if (moneyIn < 0) {
+    if (isNaN(moneyIn) || moneyIn <= 0) {
       this.accountError();
       this.deposit();
     } else if (moneyIn) {
       this.balance += moneyIn;
-      alert(
-        `You have deposited ${moneyIn} SEK. Your current balance is ${this.balance} SEK.`
-      );
+      this.getBalance();
       atm();
-    } else {
-      this.accountError();
-      this.deposit();
     }
   },
   withdrawal: function () {
@@ -97,20 +69,13 @@ const account = {
       alert(
         `Sorry, your current balance is ${this.balance} SEK, please try another amount to withdraw.`
       );
-    } else if (isNaN(moneyOut)) {
-      this.accountError();
-      this.deposit();
-    } else if (moneyOut === 0) {
-      this.accountError();
-      this.deposit();
-    } else if (moneyOut < 0) {
-      this.accountError();
       this.withdrawal();
+    } else if (isNaN(moneyOut) || moneyOut <= 0) {
+      this.accountError();
+      this.deposit();
     } else {
       this.balance -= moneyOut;
-      alert(
-        `You have withdrawn ${moneyOut} SEK. Your current balance is ${this.balance} SEK.`
-      );
+      this.getBalance();
     }
     atm();
   },
@@ -150,13 +115,3 @@ function atm() {
 }
 
 atm();
-
-/*
-I currently have no idea what I'm doing.
-
-parseInt + parseWhatever = parse = analysera, "ta ut satsdelarna i"
-
-getBalance... balance =- (-= ?) withdrawal(something extra?) balance += deposit (ev. extra), moneyIn moneyOut?
-
-
-*/
